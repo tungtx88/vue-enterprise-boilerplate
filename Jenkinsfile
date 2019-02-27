@@ -7,7 +7,11 @@ pipeline {
         }
        //dockerfile true
     }*/
-    agent any
+    agent {
+      docker {
+          args '-p 3000:3000'
+      }
+    }
 
     environment {
         CI = 'true'
